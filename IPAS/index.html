@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BioGerak - Sistem Saraf dan Gerak Manusia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>MOVE & LEARN : Sistem Gerak Manusia</h1>
+  <p>Website by Dzakir Musthafa Rasyad 10 PPLG 1</p>
+</header>
+
+<nav id="nav">
+  <button data-t="beranda" class="on">Beranda</button>
+  <button data-t="tulang">Tulang</button>
+  <button data-t="sendi">Sendi</button>
+  <button data-t="otot">Otot</button>
+  <button data-t="tulangbelakang">Kelainan Tulang Belakang</button>
+  <button data-t="penyakit">Penyakit Tulang</button>
+  <button data-t="kuis">Kuis</button>
+  <button data-t="ringkasan">Ringkasan</button>
+</nav>
+
+<main>
+
+<section id="beranda" class="show">
+  <h2>Saraf memerintah, gerak terjadi</h2>
+  <div class="card">Tubuh bergerak karena kerja sama tiga bagian: <b>sistem saraf</b> (pemberi perintah), <b>otot</b> (penggerak), dan <b>tulang + sendi</b> (rangka yang digerakkan). Tekan tombol di bawah untuk melihat perjalanan impuls saat tanganmu menyentuh benda panas.</div>
+  <div class="card">
+    <div class="flow" id="flow">
+      <div class="step">1. Reseptor kulit menerima rangsang panas</div>
+      <div class="step">2. Saraf sensorik membawa impuls ke sumsum tulang belakang</div>
+      <div class="step">3. Sumsum tulang belakang (pusat refleks) memproses &amp; langsung memberi respons</div>
+      <div class="step">4. Saraf motorik membawa perintah ke otot</div>
+      <div class="step">5. Otot berkontraksi, menarik tulang → tangan menjauh</div>
+      <div class="step">6. Impuls juga naik ke otak, sehingga kamu menyadari "panas!"</div>
+    </div>
+    <div class="btns"><button class="primary" id="play">▶ Jalankan simulasi</button><button id="reset">Ulangi</button></div>
+    <div class="info" id="flowinfo">Refleks adalah gerak cepat tanpa menunggu perintah sadar dari otak.</div>
+  </div>
+</section>
+
+<section id="tulang">
+  <h2>Sistem Tulang (Rangka)</h2>
+  <p>Tekan bagian rangka untuk melihat fungsinya. Rangka dewasa terdiri dari ±206 tulang.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 260 420" width="260" role="img" aria-label="Ilustrasi rangka manusia">
+      <circle id="b-tengkorak" class="bone" cx="130" cy="38" r="26"/>
+      <rect id="b-belakang" class="bone" x="124" y="66" width="12" height="130" rx="6"/>
+      <ellipse id="b-rusuk" class="bone" cx="130" cy="120" rx="44" ry="48" style="fill-opacity:.55"/>
+      <path id="b-panggul" class="bone" d="M88 196 Q130 170 172 196 L160 232 Q130 214 100 232Z"/>
+      <path id="b-humerus" class="limb" d="M86 88 L58 170" stroke-width="12"/>
+      <path class="limb" d="M174 88 L202 170" stroke-width="12" data-id="b-humerus"/>
+      <path id="b-radius" class="limb" d="M58 174 L44 250" stroke-width="9"/>
+      <path class="limb" d="M202 174 L216 250" stroke-width="9" data-id="b-radius"/>
+      <path id="b-femur" class="limb" d="M108 232 L102 320" stroke-width="15"/>
+      <path class="limb" d="M152 232 L158 320" stroke-width="15" data-id="b-femur"/>
+      <path id="b-tibia" class="limb" d="M102 326 L100 404" stroke-width="11"/>
+      <path class="limb" d="M158 326 L160 404" stroke-width="11" data-id="b-tibia"/>
+    </svg>
+  </div>
+  <div class="info" id="boneinfo">Pilih salah satu tulang pada gambar.</div>
+  <div class="card"><b>Fungsi umum rangka:</b> menopang tubuh, melindungi organ (otak, jantung, paru-paru), tempat melekat otot, tempat pembentukan sel darah (sumsum merah), dan menyimpan kalsium &amp; fosfor.</div>
+</section>
+
+<section id="sendi">
+  <h2>Sendi (Persendian)</h2>
+  <p>Sendi adalah hubungan antar tulang yang menentukan arah gerak. Tekan jenis sendi:</p>
+  <div class="btns" id="jointBtns"></div>
+  <div class="card">
+    <div id="jointinfo">Pilih jenis sendi.</div>
+    <svg viewBox="0 0 300 90" width="100%" style="max-width:340px">
+      <g id="jointAnim" style="transform-origin:150px 45px">
+        <rect x="40" y="35" width="110" height="20" rx="10" fill="var(--bone)" stroke="var(--bones)"/>
+        <rect x="150" y="35" width="110" height="20" rx="10" fill="var(--bone)" stroke="var(--bones)"/>
+        <circle cx="150" cy="45" r="10" fill="var(--ac)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="card"><b>Struktur sendi:</b> tulang rawan (peredam benturan), cairan sinovial (pelumas), kapsul sendi, dan ligamen (pengikat tulang ke tulang). Ligamen menyambung <i>tulang-tulang</i>, sedangkan tendon menyambung <i>otot-tulang</i>.</div>
+</section>
+
+<section id="otot">
+  <h2>Sistem Otot</h2>
+  <p>Geser untuk menekuk lengan. Lihat otot biseps (depan) dan triseps (belakang) bekerja berlawanan (antagonis).</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 260 280" width="260">
+      <rect x="62" y="20" width="36" height="110" rx="18" fill="var(--bone)" stroke="var(--bones)" stroke-width="2"/>
+      <ellipse id="triceps" cx="58" cy="75" rx="12" ry="42" fill="#c0392b" opacity=".85"/>
+      <ellipse id="biceps" cx="102" cy="75" rx="12" ry="42" fill="#e8541e" opacity=".85"/>
+      <g id="forearm"><rect x="66" y="126" width="28" height="110" rx="14" fill="var(--bone)" stroke="var(--bones)" stroke-width="2"/></g>
+      <circle cx="80" cy="130" r="9" fill="var(--pr)"/>
+      <text x="125" y="60" fill="var(--tx)" font-size="13">Biseps</text>
+      <text x="8" y="60" fill="var(--tx)" font-size="13">Triseps</text>
+      <text x="125" y="135" fill="var(--tx)" font-size="13">Siku (sendi engsel)</text>
+    </svg>
+    <input type="range" id="arm" min="0" max="140" value="0" aria-label="Sudut siku">
+    <div class="btns" style="justify-content:center"><button id="flex">💪 Tekuk</button><button id="ext">Luruskan</button></div>
+  </div>
+  <div class="info" id="muscleinfo">Lengan lurus: triseps berkontraksi, biseps rileks.</div>
+  <div class="card"><b>Hubungan dengan saraf:</b> saraf motorik melepas pesan kimia (asetilkolin) pada otot. Otot memendek → menarik tulang lewat tendon. Tiga jenis otot: <b>rangka</b> (sadar), <b>polos</b> (tak sadar, organ dalam), <b>jantung</b> (tak sadar, bergaris).</div>
+</section>
+
+<section id="tulangbelakang">
+  <h2>Kelainan Tulang Belakang</h2>
+  <p>Tulang belakang normal tampak samping memiliki lengkung alami (leher &amp; pinggang melengkung ke depan, punggung ke belakang). Pilih kondisi:</p>
+  <div class="btns" id="spineBtns">
+    <button data-m="normal" class="on">Normal</button>
+    <button data-m="skoliosis">Skoliosis</button>
+    <button data-m="kifosis">Kifosis</button>
+    <button data-m="lordosis">Lordosis</button>
+  </div>
+  <div class="svgbox"><svg id="spine" viewBox="0 0 320 380" width="300"></svg></div>
+  <div class="info" id="spineinfo"></div>
+</section>
+
+<section id="penyakit">
+  <h2>Penyakit yang Memengaruhi Tulang</h2>
+  <div id="dis"></div>
+</section>
+
+<section id="kuis">
+  <h2>Kuis Singkat</h2>
+  <div id="quiz"></div>
+  <div class="info" id="score">Jawab semua pertanyaan.</div>
+  <div class="btns"><button id="qreset">Ulangi kuis</button></div>
+</section>
+
+<section id="ringkasan">
+  <h2>Ringkasan Materi</h2>
+  <div class="card"><ul class="sum">
+    <li><b>Saraf</b> menerima rangsang dan mengirim perintah; <b>otot</b> berkontraksi; <b>tulang</b> menjadi pengungkit; <b>sendi</b> menentukan arah gerak.</li>
+    <li><b>Refleks</b>: rangsang → saraf sensorik → sumsum tulang belakang → saraf motorik → otot.</li>
+    <li><b>Tendon</b> = otot ke tulang. <b>Ligamen</b> = tulang ke tulang.</li>
+    <li><b>Skoliosis</b>: tulang belakang bengkok ke samping (bentuk S/C).</li>
+    <li><b>Kifosis</b>: punggung terlalu membungkuk ke belakang.</li>
+    <li><b>Lordosis</b>: pinggang terlalu melengkung ke depan.</li>
+    <li><b>Osteoporosis</b>: tulang keropos. <b>Rakitis</b>: tulang lunak akibat kurang vitamin D. <b>Osteoartritis</b>: tulang rawan sendi aus.</li>
+    <li>Jaga tulang: cukup kalsium &amp; vitamin D, olahraga, postur baik, tidak merokok.</li>
+  </ul></div>
+</section>
+
+</main>
+
+<footer>OTOT TULANG SENDI DAN SEBAGAINYA</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
