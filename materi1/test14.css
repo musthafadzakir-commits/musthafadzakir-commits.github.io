@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+}
+
+h2 {
+    color: slategrey;
+}
+
+p {
+    color: blue;
+}
+
+#nama {
+    color: blueviolet;
+}
+
+.kelas {
+    color: greenyellow;
+}
+a {
+    color:aquamarine
+}
